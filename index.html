@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Example Page</title>
+  <meta name="description" content="Billy">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+
+
+</head>
+
+
+
+<body>
+<h3 class="name">Billy Harris</h3>
+<div class="picture">
+<img src="profile.png">
+</div>
+
+<div class="page-head">
+<h2>width: <span id="widthSpan"></span> px</h2>
+<h2>height: <span id="heightSpan"></span> px</h2>
+</div>
+
+<div class="page-content">
+<h3>Research and Action</h3>
+<p>I found a lot of useful techniques online to help me with my first technical exercise. The first thing that helped me was researching information on media queries.  I then used this information to change certain attributes at certain breakpoints. I researched what sizes typical device were eg. tablet 768px , mobile 480px. Then used this to change the background colour at different points. For my website, at full sized desktop, the colour is a pale orange whilst the text is black. Was the viewport is decreased the size background colour changes to blue and the text changed to white. 
+<br>
+<br>
+ I used information from stack-overflow to find out how to fetch the live viewport pixels. I tried this with native javascript first but  this only seemed to work when refreshing the page. I then found another solution using jQuery, which seemed to work perfectly.<br>
+<br><br>
+
+Some useful websites that helped me along the way:
+<br>
+<br>
+<a target="_blank" href="http://www.creativebloq.com/responsive-web-design/build-basic-responsive-site-css-1132756"> <strong>Building a Basic Responsive Website</strong></a>
+<br>
+This helped me with understanding the structure of how responsive websites work., although I didn't use this site directly for technical help.
+<br>
+<br>
+<a target="_blank" href="http://stackoverflow.com/questions/9828831/jquery-on-window-resize"> <strong>Displaying the viewport using jQuery - Realtime</strong></a>
+<br>
+This helped me display the viewport in realtime whilst resizing the screen. I orginally tried it with native JS but jQuery seemed to work better.
+<br>
+<br>
+
+<a target="_blank" href="https://teamtreehouse.com/community/my-website-is-not-responsive-for-mobile-devices"> <strong>Making the site display properly on mobile</strong></a>
+I couldn't figure out why my site wasnt showing the attributes of my mobile queries. I did a quick google and found that this meta tag needed to be used <i> meta name="viewport" content="width=device-width, initial-scale=1.0"></i> which seemed to fix the issue.
+
+<br>
+<br>
+The thing that I learnt the most from this exercise was actually using media queries and understanding how they work with different screen dimensions. By placing each element/class inside each query it would then apply it as the window was resized.
+<br>
+<br>
+<br>
+<br>
+ </p>
+
+
+
+</div>
+
+
+
+<script>
+  
+
+$('#heightSpan').html($(window).height());
+$('#widthSpan').html($(window).width());
+
+$(window).on('resize', function(){
+    $('#heightSpan').html($(window).height());
+    $('#widthSpan').html($(window).width());
+});
+  
+
+</script>
+
+
+
+
+
+</body>
+</html>
